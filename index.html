@@ -1,0 +1,2421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manish Chapagain | Data & AI Engineer</title>
+
+    <meta
+        name="description"
+        content="Portfolio of Manish Chapagain, Computer Engineering graduate interested in Data Engineering, Artificial Intelligence and Knowledge-Driven Data Management."
+    >
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        float: "float 6s ease-in-out infinite",
+                        gradient: "gradient 8s ease infinite"
+                    },
+
+                    keyframes: {
+                        float: {
+                            "0%, 100%": {
+                                transform: "translateY(0)"
+                            },
+                            "50%": {
+                                transform: "translateY(-12px)"
+                            }
+                        },
+
+                        gradient: {
+                            "0%, 100%": {
+                                backgroundPosition: "0% 50%"
+                            },
+                            "50%": {
+                                backgroundPosition: "100% 50%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+
+    <style>
+
+        /* =========================================
+           BASE
+        ========================================== */
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(37, 99, 235, 0.12),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 30%,
+                    rgba(14, 165, 233, 0.08),
+                    transparent 30%
+                ),
+                #020617;
+
+            color: white;
+
+            font-family:
+                Inter,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================================
+           GLASS EFFECT
+        ========================================== */
+
+        .glass {
+            background: rgba(255, 255, 255, 0.04);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+
+        /* =========================================
+           GRID BACKGROUND
+        ========================================== */
+
+        .grid-bg {
+
+            background-image:
+                linear-gradient(
+                    rgba(255, 255, 255, 0.035) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.035) 1px,
+                    transparent 1px
+                );
+
+            background-size: 50px 50px;
+        }
+
+
+        /* =========================================
+           GRADIENT TEXT
+        ========================================== */
+
+        .gradient-text {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #60a5fa,
+                    #38bdf8,
+                    #818cf8
+                );
+
+            background-size: 200% 200%;
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+
+        /* =========================================
+           PROJECT CARDS
+        ========================================== */
+
+        .project-card {
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+
+        .project-card:hover {
+
+            transform: translateY(-9px);
+
+            border-color:
+                rgba(59, 130, 246, 0.55);
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.35),
+                0 0 35px rgba(37, 99, 235, 0.08);
+        }
+
+
+        /* =========================================
+           SKILL CARDS
+        ========================================== */
+
+        .skill-card {
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+
+        .skill-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(59, 130, 246, 0.45);
+        }
+
+
+        /* =========================================
+           SCROLL REVEAL
+        ========================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+
+        .reveal.active {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================
+           MOBILE MENU
+        ========================================== */
+
+        .mobile-menu {
+
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition:
+                max-height 0.35s ease;
+        }
+
+
+        .mobile-menu.open {
+
+            max-height: 500px;
+        }
+
+
+        /* =========================================
+           SCROLLBAR
+        ========================================== */
+
+        ::-webkit-scrollbar {
+
+            width: 7px;
+        }
+
+
+        ::-webkit-scrollbar-track {
+
+            background: #020617;
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+
+            background: #1d4ed8;
+
+            border-radius: 20px;
+        }
+
+
+        /* =========================================
+           TEXT SELECTION
+        ========================================== */
+
+        ::selection {
+
+            background:
+                rgba(59, 130, 246, 0.35);
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         BACKGROUND
+    ========================================== -->
+
+    <div
+        class="grid-bg
+               fixed
+               inset-0
+               -z-10
+               opacity-40
+               pointer-events-none">
+    </div>
+
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <header
+        class="fixed
+               top-0
+               left-0
+               right-0
+               z-50">
+
+        <nav class="glass">
+
+            <div
+                class="max-w-6xl
+                       mx-auto
+                       px-6
+                       py-4
+                       flex
+                       items-center
+                       justify-between">
+
+                <!-- Logo -->
+
+                <a
+                    href="#home"
+                    class="text-xl
+                           font-extrabold
+                           tracking-tight">
+
+                    Manish<span class="text-blue-400">.</span>
+
+                </a>
+
+
+                <!-- Desktop Navigation -->
+
+                <div
+                    class="hidden
+                           md:flex
+                           items-center
+                           gap-7
+                           text-sm">
+
+                    <a
+                        href="#about"
+                        class="text-gray-300
+                               hover:text-blue-400
+                               transition">
+                        About
+                    </a>
+
+                    <a
+                        href="#skills"
+                        class="text-gray-300
+                               hover:text-blue-400
+                               transition">
+                        Skills
+                    </a>
+
+                    <a
+                        href="#projects"
+                        class="text-gray-300
+                               hover:text-blue-400
+                               transition">
+                        Projects
+                    </a>
+
+                    <a
+                        href="#education"
+                        class="text-gray-300
+                               hover:text-blue-400
+                               transition">
+                        Education
+                    </a>
+
+                    <a
+                        href="#certifications"
+                        class="text-gray-300
+                               hover:text-blue-400
+                               transition">
+                        Certifications
+                    </a>
+
+                    <a
+                        href="#contact"
+                        class="text-gray-300
+                               hover:text-blue-400
+                               transition">
+                        Contact
+                    </a>
+
+
+                    <!-- CV -->
+
+                    <a
+                        href="cv.pdf"
+                        download
+                        class="bg-blue-600
+                               hover:bg-blue-700
+                               px-4
+                               py-2
+                               rounded-lg
+                               transition">
+
+                        Download CV
+
+                    </a>
+
+                </div>
+
+
+                <!-- Mobile Menu Button -->
+
+                <button
+                    id="menuButton"
+                    class="md:hidden
+                           text-2xl
+                           text-gray-300"
+                    aria-label="Open navigation menu">
+
+                    ☰
+
+                </button>
+
+            </div>
+
+
+            <!-- Mobile Menu -->
+
+            <div
+                id="mobileMenu"
+                class="mobile-menu
+                       md:hidden
+                       border-t
+                       border-white/10">
+
+                <div
+                    class="px-6
+                           py-5
+                           flex
+                           flex-col
+                           gap-5
+                           text-gray-300">
+
+                    <a href="#about" class="mobile-link">
+                        About
+                    </a>
+
+                    <a href="#skills" class="mobile-link">
+                        Skills
+                    </a>
+
+                    <a href="#projects" class="mobile-link">
+                        Projects
+                    </a>
+
+                    <a href="#education" class="mobile-link">
+                        Education
+                    </a>
+
+                    <a href="#certifications" class="mobile-link">
+                        Certifications
+                    </a>
+
+                    <a href="#contact" class="mobile-link">
+                        Contact
+                    </a>
+
+                    <a
+                        href="cv.pdf"
+                        download
+                        class="bg-blue-600
+                               text-center
+                               py-3
+                               rounded-lg">
+
+                        Download CV
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================
+         HERO SECTION
+    ========================================== -->
+
+    <section
+        id="home"
+        class="min-h-screen
+               flex
+               items-center
+               justify-center
+               px-6
+               pt-24">
+
+        <div
+            class="max-w-5xl
+                   text-center">
+
+
+            <!-- Status -->
+
+            <div
+                class="reveal
+                       inline-flex
+                       items-center
+                       gap-2
+                       glass
+                       px-4
+                       py-2
+                       rounded-full
+                       text-sm
+                       text-gray-300
+                       mb-8">
+
+                <span
+                    class="w-2
+                           h-2
+                           rounded-full
+                           bg-green-400
+                           animate-pulse">
+                </span>
+
+                Computer Engineering Graduate
+
+            </div>
+
+
+            <!-- Heading -->
+
+            <h1
+                class="reveal
+                       text-5xl
+                       sm:text-6xl
+                       md:text-8xl
+                       font-extrabold
+                       tracking-tight
+                       leading-tight">
+
+                Hello, I'm
+
+                <span
+                    class="gradient-text
+                           animate-gradient">
+
+                    Manish Chapagain
+
+                </span>
+
+            </h1>
+
+
+            <!-- Subtitle -->
+
+            <p
+                class="reveal
+                       text-lg
+                       md:text-2xl
+                       text-gray-400
+                       mt-6">
+
+                Computer Engineering Graduate
+
+                <span class="text-blue-400">
+                    |
+                </span>
+
+                Aspiring Data & AI Engineer
+
+            </p>
+
+
+            <!-- Description -->
+
+            <p
+                class="reveal
+                       text-gray-500
+                       max-w-2xl
+                       mx-auto
+                       mt-6
+                       leading-7">
+
+                Interested in Data Engineering, Artificial Intelligence,
+                knowledge-driven systems and building practical
+                software solutions using data and technology.
+
+            </p>
+
+
+            <!-- Buttons -->
+
+            <div
+                class="reveal
+                       flex
+                       flex-wrap
+                       justify-center
+                       gap-4
+                       mt-9">
+
+
+                <!-- Projects -->
+
+                <a
+                    href="#projects"
+                    class="bg-blue-600
+                           hover:bg-blue-700
+                           px-7
+                           py-3
+                           rounded-full
+                           font-semibold
+                           transition
+                           hover:-translate-y-1">
+
+                    View Projects →
+
+                </a>
+
+
+                <!-- CV -->
+
+                <a
+                    href="cv.pdf"
+                    download
+                    class="border
+                           border-white/15
+                           hover:bg-white
+                           hover:text-black
+                           px-7
+                           py-3
+                           rounded-full
+                           font-semibold
+                           transition
+                           hover:-translate-y-1">
+
+                    Download CV ↓
+
+                </a>
+
+
+                <!-- GitHub -->
+
+                <a
+                    href="https://github.com/manish11111111"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="glass
+                           px-7
+                           py-3
+                           rounded-full
+                           font-semibold
+                           hover:border-blue-400
+                           transition">
+
+                    GitHub ↗
+
+                </a>
+
+            </div>
+
+
+            <!-- Scroll indicator -->
+
+            <div
+                class="mt-20
+                       animate-bounce
+                       text-gray-600">
+
+                ↓
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         ABOUT
+    ========================================== -->
+
+    <section
+        id="about"
+        class="py-24
+               px-6">
+
+        <div
+            class="max-w-5xl
+                   mx-auto">
+
+
+            <!-- Section heading -->
+
+            <div class="reveal mb-12">
+
+                <p
+                    class="text-blue-400
+                           uppercase
+                           tracking-[0.2em]
+                           text-sm
+                           font-semibold">
+
+                    01 / About
+
+                </p>
+
+
+                <h2
+                    class="text-4xl
+                           md:text-5xl
+                           font-bold
+                           mt-3">
+
+                    A little about me.
+
+                </h2>
+
+            </div>
+
+
+            <div
+                class="grid
+                       md:grid-cols-2
+                       gap-10
+                       items-start">
+
+
+                <!-- About Text -->
+
+                <div
+                    class="reveal
+                           space-y-5
+                           text-gray-400
+                           leading-7">
+
+                    <p>
+
+                        My journey into technology started from an
+                        unexpected direction. Coming from a Biology
+                        background, I initially had a different academic
+                        path before choosing Computer Engineering.
+
+                    </p>
+
+
+                    <p>
+
+                        During my undergraduate studies, I gradually
+                        developed a strong interest in programming,
+                        databases, software development and intelligent
+                        systems.
+
+                    </p>
+
+
+                    <p>
+
+                        Building applications such as MovieFlix,
+                        GharSewa and database-driven management systems
+                        helped me understand how concepts learned in
+                        classrooms can be transformed into practical
+                        solutions.
+
+                    </p>
+
+
+                    <p>
+
+                        My current interests lie at the intersection of
+
+                        <span class="text-blue-400">
+
+                            data management, data engineering and AI
+
+                        </span>
+
+                        , particularly systems that can connect,
+                        organize and make meaningful use of data.
+
+                    </p>
+
+                </div>
+
+
+                <!-- About Card -->
+
+                <div
+                    class="reveal
+                           glass
+                           rounded-2xl
+                           p-7">
+
+                    <div class="space-y-7">
+
+
+                        <div>
+
+                            <p class="text-gray-500 text-sm">
+                                Education
+                            </p>
+
+                            <p class="font-semibold mt-1">
+                                Bachelor of Computer Engineering
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <p class="text-gray-500 text-sm">
+                                Academic Performance
+                            </p>
+
+                            <p class="font-semibold mt-1">
+                                GPA 3.66 / 4.00
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <p class="text-gray-500 text-sm">
+                                Primary Interests
+                            </p>
+
+                            <p class="font-semibold mt-1">
+                                Software Development · Data Engineering · AI · Data Management
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <p class="text-gray-500 text-sm">
+                                Location
+                            </p>
+
+                            <p class="font-semibold mt-1">
+                                Kathmandu, Nepal
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SKILLS
+    ========================================== -->
+
+    <section
+        id="skills"
+        class="py-24
+               px-6">
+
+        <div
+            class="max-w-5xl
+                   mx-auto">
+
+
+            <div class="reveal mb-12">
+
+                <p
+                    class="text-blue-400
+                           uppercase
+                           tracking-[0.2em]
+                           text-sm
+                           font-semibold">
+
+                    02 / Skills
+
+                </p>
+
+
+                <h2
+                    class="text-4xl
+                           md:text-5xl
+                           font-bold
+                           mt-3">
+
+                    Technologies I work with.
+
+                </h2>
+
+            </div>
+
+
+            <div
+                class="grid
+                       sm:grid-cols-2
+                       lg:grid-cols-4
+                       gap-5">
+
+
+                <!-- Programming -->
+
+                <div
+                    class="skill-card
+                           reveal
+                           glass
+                           rounded-2xl
+                           p-6">
+
+                    <div
+                        class="text-blue-400
+                               text-2xl
+                               mb-4">
+
+                        &lt;/&gt;
+
+                    </div>
+
+
+                    <h3
+                        class="font-bold
+                               text-lg
+                               mb-3">
+
+                        Programming
+
+                    </h3>
+
+
+                    <p
+                        class="text-gray-500
+                               text-sm
+                               leading-6">
+
+                        Java · Python · C · C++ · Kotlin · PHP
+
+                    </p>
+
+                </div>
+
+
+                <!-- Data -->
+
+                <div
+                    class="skill-card
+                           reveal
+                           glass
+                           rounded-2xl
+                           p-6">
+
+                    <div
+                        class="text-blue-400
+                               text-2xl
+                               mb-4">
+
+                        ◈
+
+                    </div>
+
+
+                    <h3
+                        class="font-bold
+                               text-lg
+                               mb-3">
+
+                        Data & Databases
+
+                    </h3>
+
+
+                    <p
+                        class="text-gray-500
+                               text-sm
+                               leading-6">
+
+                        SQL · MySQL · Firebase · Pandas · Data Analysis
+
+                    </p>
+
+                </div>
+
+
+                <!-- AI -->
+
+                <div
+                    class="skill-card
+                           reveal
+                           glass
+                           rounded-2xl
+                           p-6">
+
+                    <div
+                        class="text-blue-400
+                               text-2xl
+                               mb-4">
+
+                        AI
+
+                    </div>
+
+
+                    <h3
+                        class="font-bold
+                               text-lg
+                               mb-3">
+
+                        AI & Machine Learning
+
+                    </h3>
+
+
+                    <p
+                        class="text-gray-500
+                               text-sm
+                               leading-6">
+
+                        ML Fundamentals · Recommendation Systems ·
+                        Data-driven Applications
+
+                    </p>
+
+                </div>
+
+
+                <!-- Development -->
+
+                <div
+                    class="skill-card
+                           reveal
+                           glass
+                           rounded-2xl
+                           p-6">
+
+                    <div
+                        class="text-blue-400
+                               text-2xl
+                               mb-4">
+
+                        ⚙
+
+                    </div>
+
+
+                    <h3
+                        class="font-bold
+                               text-lg
+                               mb-3">
+
+                        Development
+
+                    </h3>
+
+
+                    <p
+                        class="text-gray-500
+                               text-sm
+                               leading-6">
+
+                        Android Studio · REST APIs · Retrofit ·
+                        Git · OOP
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PROJECTS
+    ========================================== -->
+
+    <section
+        id="projects"
+        class="py-24
+               px-6">
+
+        <div
+            class="max-w-6xl
+                   mx-auto">
+
+
+            <!-- Heading -->
+
+            <div class="reveal mb-12">
+
+                <p
+                    class="text-blue-400
+                           uppercase
+                           tracking-[0.2em]
+                           text-sm
+                           font-semibold">
+
+                    03 / Projects
+
+                </p>
+
+
+                <h2
+                    class="text-4xl
+                           md:text-5xl
+                           font-bold
+                           mt-3">
+
+                    Things I've built.
+
+                </h2>
+
+
+                <p
+                    class="text-gray-500
+                           mt-4
+                           max-w-2xl">
+
+                    Academic and practical projects that helped me
+                    develop software engineering, database and
+                    data-driven problem-solving skills.
+
+                </p>
+
+            </div>
+
+
+
+            <div
+                class="grid
+                       md:grid-cols-2
+                       gap-6">
+
+
+                <!-- =====================================
+                     MOVIEFLIX
+                ====================================== -->
+
+                <article
+                    class="project-card
+                           reveal
+                           glass
+                           rounded-2xl
+                           p-7">
+
+                    <div
+                        class="flex
+                               justify-between
+                               items-start
+                               mb-8">
+
+                        <span
+                            class="text-blue-400
+                                   text-sm
+                                   font-semibold">
+
+                            01
+
+                        </span>
+
+
+                        <span
+                            class="text-gray-600
+                                   text-sm">
+
+                            Android
+
+                        </span>
+
+                    </div>
+
+
+                    <h3
+                        class="text-2xl
+                               font-bold
+                               mb-3">
+
+                        MovieFlix
+
+                    </h3>
+
+
+                    <p
+                        class="text-gray-400
+                               leading-7
+                               mb-6">
+
+                        A movie discovery and streaming-oriented
+                        Android application built with Kotlin.
+                        The project integrates external movie APIs,
+                        Firebase, user profiles, subscriptions and
+                        data-driven personalization features.
+
+                    </p>
+
+
+                    <div
+                        class="flex
+                               flex-wrap
+                               gap-2
+                               mb-7">
+
+                        <span class="tech">
+                            Kotlin
+                        </span>
+
+                        <span class="tech">
+                            Android Studio
+                        </span>
+
+                        <span class="tech">
+                            Firebase
+                        </span>
+
+                        <span class="tech">
+                            TMDB API
+                        </span>
+
+                        <span class="tech">
+                            Retrofit
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://github.com/manish11111111/MovieFlix"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400
+                               font-semibold
+                               hover:text-blue-300
+                               transition">
+
+                        View GitHub →
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- =====================================
+                     HOTEL MANAGEMENT
+                ====================================== -->
+
+                <article
+                    class="project-card
+                           reveal
+                           glass
+                           rounded-2xl
+                           p-7">
+
+                    <div
+                        class="flex
+                               justify-between
+                               items-start
+                               mb-8">
+
+                        <span
+                            class="text-blue-400
+                                   text-sm
+                                   font-semibold">
+
+                            03
+
+                        </span>
+
+
+                        <span
+                            class="text-gray-600
+                                   text-sm">
+
+                            Web Application
+
+                        </span>
+
+                    </div>
+
+
+                    <h3
+                        class="text-2xl
+                               font-bold
+                               mb-3">
+
+                        Hotel Management System
+
+                    </h3>
+
+
+                    <p
+                        class="text-gray-400
+                               leading-7
+                               mb-6">
+
+                        A web-based hotel management application
+                        developed to demonstrate practical web
+                        development, backend logic and database
+                        management.
+
+                    </p>
+
+
+                    <div
+                        class="flex
+                               flex-wrap
+                               gap-2
+                               mb-7">
+
+                        <span class="tech">
+                            JavaScript
+                        </span>
+
+                        <span class="tech">
+                            PHP
+                        </span>
+
+                        <span class="tech">
+                            MySQL
+                        </span>
+
+                        <span class="tech">
+                            XAMPP
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://github.com/manish11111111/Hotel-Management-System/tree/main/Project%201/hotel"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400
+                               font-semibold
+                               hover:text-blue-300
+                               transition">
+
+                        View GitHub →
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- =====================================
+                     SCHOOL MANAGEMENT
+                ====================================== -->
+
+                <article
+                    class="project-card
+                           reveal
+                           glass
+                           rounded-2xl
+                           p-7">
+
+                    <div
+                        class="flex
+                               justify-between
+                               items-start
+                               mb-8">
+
+                        <span
+                            class="text-blue-400
+                                   text-sm
+                                   font-semibold">
+
+                            04
+
+                        </span>
+
+
+                        <span
+                            class="text-gray-600
+                                   text-sm">
+
+                            Desktop Application
+
+                        </span>
+
+                    </div>
+
+
+                    <h3
+                        class="text-2xl
+                               font-bold
+                               mb-3">
+
+                        School Management System
+
+                    </h3>
+
+
+                    <p
+                        class="text-gray-400
+                               leading-7
+                               mb-6">
+
+                        A C# desktop application designed to manage
+                        students, teachers and courses, demonstrating
+                        object-oriented programming and desktop
+                        application development.
+
+                    </p>
+
+
+                    <div
+                        class="flex
+                               flex-wrap
+                               gap-2
+                               mb-7">
+
+                        <span class="tech">
+                            C#
+                        </span>
+
+                        <span class="tech">
+                            OOP
+                        </span>
+
+                        <span class="tech">
+                            Desktop Application
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://github.com/manish11111111/School-Management-System"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400
+                               font-semibold
+                               hover:text-blue-300
+                               transition">
+
+                        View GitHub →
+
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         EDUCATION
+    ========================================== -->
+
+    <!-- =========================================
+     EDUCATION
+========================================== -->
+
+<section
+    id="education"
+    class="py-24 px-6"
+>
+
+    <div class="max-w-5xl mx-auto">
+
+
+        <!-- Section Heading -->
+
+        <div class="reveal mb-12">
+
+            <p
+                class="text-blue-400
+                       uppercase
+                       tracking-[0.2em]
+                       text-sm
+                       font-semibold"
+            >
+                04 / Education
+            </p>
+
+            <h2
+                class="text-4xl
+                       md:text-5xl
+                       font-bold
+                       mt-3"
+            >
+                Academic journey.
+            </h2>
+
+        </div>
+
+
+        <!-- Timeline -->
+
+        <div
+            class="relative
+                   border-l
+                   border-white/10
+                   ml-3"
+        >
+
+
+            <!-- =====================================
+                 BACHELOR
+            ====================================== -->
+
+            <div
+                class="reveal
+                       relative
+                       pl-8
+                       pb-12"
+            >
+
+                <!-- Timeline Dot -->
+
+                <div
+                    class="absolute
+                           -left-[6px]
+                           top-1
+                           w-3
+                           h-3
+                           rounded-full
+                           bg-blue-500"
+                ></div>
+
+
+                <p
+                    class="text-blue-400
+                           text-sm
+                           font-semibold"
+                >
+                    2022 — 2026
+                </p>
+
+
+                <h3
+                    class="text-xl
+                           md:text-2xl
+                           font-bold
+                           mt-2"
+                >
+                    Bachelor of Computer Engineering
+                </h3>
+
+
+                <p
+                    class="text-gray-400
+                           mt-2"
+                >
+                    Nepal Engineering College, Bhaktapur
+                </p>
+
+
+                <p
+                    class="text-gray-500
+                           mt-1"
+                >
+                    Affiliated with Pokhara University
+                </p>
+
+
+                <p
+                    class="text-gray-400
+                           mt-3"
+                >
+                    GPA:
+                    <span class="text-white font-semibold">
+                        3.66 / 4.00
+                    </span>
+                </p>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 HIGHER SECONDARY
+            ====================================== -->
+
+            <div
+                class="reveal
+                       relative
+                       pl-8
+                       pb-12"
+            >
+
+                <!-- Timeline Dot -->
+
+                <div
+                    class="absolute
+                           -left-[6px]
+                           top-1
+                           w-3
+                           h-3
+                           rounded-full
+                           bg-blue-500"
+                ></div>
+
+
+                <p
+                    class="text-blue-400
+                           text-sm
+                           font-semibold"
+                >
+                    2019 — 2021
+                </p>
+
+
+                <h3
+                    class="text-xl
+                           md:text-2xl
+                           font-bold
+                           mt-2"
+                >
+                    Higher Secondary Education
+                </h3>
+
+
+                <p
+                    class="text-gray-400
+                           mt-2"
+                >
+                    Capital Secondary School, Kathmandu
+                </p>
+                <p
+                    class="text-gray-500
+                           mt-1"
+                >
+                    National Examination Board (NEB)
+                </p>
+
+
+
+
+                <p
+                    class="text-gray-400
+                           mt-3"
+                >
+                    GPA:
+                    <span class="text-white font-semibold">
+                        3.59 / 4.00
+                    </span>
+                </p>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 SEE
+            ====================================== -->
+
+            <div
+                class="reveal
+                       relative
+                       pl-8"
+            >
+
+                <!-- Timeline Dot -->
+
+                <div
+                    class="absolute
+                           -left-[6px]
+                           top-1
+                           w-3
+                           h-3
+                           rounded-full
+                           bg-blue-500"
+                ></div>
+
+
+                <p
+                    class="text-blue-400
+                           text-sm
+                           font-semibold"
+                >
+                    2017 — 2018
+                </p>
+
+
+                <h3
+                    class="text-xl
+                           md:text-2xl
+                           font-bold
+                           mt-2"
+                >
+                    Secondary Education Examination (SEE)
+                </h3>
+
+
+                <p
+                    class="text-gray-400
+                           mt-2"
+                >
+                    Sagarmatha English School, Morang
+                </p>
+
+
+                <p
+                    class="text-gray-400
+                           mt-3"
+                >
+                    GPA:
+                    <span class="text-white font-semibold">
+                        3.60 / 4.00
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- =========================================
+     CERTIFICATIONS
+========================================== -->
+
+<section
+    id="certifications"
+    class="py-24
+           px-6
+           bg-slate-900/30">
+
+    <div
+        class="max-w-5xl
+               mx-auto">
+
+
+        <div class="reveal mb-12">
+
+            <p
+                class="text-blue-400
+                       uppercase
+                       tracking-[0.2em]
+                       text-sm
+                       font-semibold">
+
+                05 / Certifications
+
+            </p>
+
+
+            <h2
+                class="text-4xl
+                       md:text-5xl
+                       font-bold
+                       mt-3">
+
+                Continuous learning.
+
+            </h2>
+
+        </div>
+
+
+        <div
+            class="grid
+                   sm:grid-cols-2
+                   gap-4">
+
+
+            <!-- =====================================
+                 NEPAL ENGINEERING COUNCIL
+            ====================================== -->
+
+            <div
+                class="reveal
+                       glass
+                       rounded-xl
+                       p-5
+                       flex
+                       items-center
+                       gap-4">
+
+                <div
+                    class="w-11
+                           h-11
+                           shrink-0
+                           rounded-lg
+                           bg-blue-500/10
+                           flex
+                           items-center
+                           justify-center
+                           text-blue-400
+                           font-bold">
+
+                    NEC
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="font-semibold">
+                        General Registered Engineer
+                    </h3>
+
+                    <p class="text-gray-500 text-sm">
+                        Nepal Engineering Council
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 PYTHON
+            ====================================== -->
+
+            <div
+                class="reveal
+                       glass
+                       rounded-xl
+                       p-5
+                       flex
+                       items-center
+                       gap-4">
+
+                <div
+                    class="w-11
+                           h-11
+                           shrink-0
+                           rounded-lg
+                           bg-blue-500/10
+                           flex
+                           items-center
+                           justify-center
+                           text-blue-400
+                           font-bold">
+
+                    PY
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="font-semibold">
+                        Python
+                    </h3>
+
+                    <p class="text-gray-500 text-sm">
+                        Kaggle
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 SQL
+            ====================================== -->
+
+            <div
+                class="reveal
+                       glass
+                       rounded-xl
+                       p-5
+                       flex
+                       items-center
+                       gap-4">
+
+                <div
+                    class="w-11
+                           h-11
+                           shrink-0
+                           rounded-lg
+                           bg-blue-500/10
+                           flex
+                           items-center
+                           justify-center
+                           text-blue-400
+                           font-bold">
+
+                    SQL
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="font-semibold">
+                        Intro to SQL
+                    </h3>
+
+                    <p class="text-gray-500 text-sm">
+                        Kaggle
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 PANDAS
+            ====================================== -->
+
+            <div
+                class="reveal
+                       glass
+                       rounded-xl
+                       p-5
+                       flex
+                       items-center
+                       gap-4">
+
+                <div
+                    class="w-11
+                           h-11
+                           shrink-0
+                           rounded-lg
+                           bg-blue-500/10
+                           flex
+                           items-center
+                           justify-center
+                           text-blue-400
+                           font-bold">
+
+                    PD
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="font-semibold">
+                        Pandas
+                    </h3>
+
+                    <p class="text-gray-500 text-sm">
+                        Kaggle
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 MACHINE LEARNING
+            ====================================== -->
+
+            <div
+                class="reveal
+                       glass
+                       rounded-xl
+                       p-5
+                       flex
+                       items-center
+                       gap-4">
+
+                <div
+                    class="w-11
+                           h-11
+                           shrink-0
+                           rounded-lg
+                           bg-blue-500/10
+                           flex
+                           items-center
+                           justify-center
+                           text-blue-400
+                           font-bold">
+
+                    ML
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="font-semibold">
+                        Intro to Machine Learning
+                    </h3>
+
+                    <p class="text-gray-500 text-sm">
+                        Kaggle
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 IELTS
+            ====================================== -->
+
+            <div
+                class="reveal
+                       glass
+                       rounded-xl
+                       p-5
+                       flex
+                       items-center
+                       gap-4">
+
+                <div
+                    class="w-11
+                           h-11
+                           shrink-0
+                           rounded-lg
+                           bg-blue-500/10
+                           flex
+                           items-center
+                           justify-center
+                           text-blue-400
+                           font-bold">
+
+                    EN
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="font-semibold">
+                        IELTS
+                    </h3>
+
+                    <p class="text-gray-500 text-sm">
+                        Overall Band 8.0
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 FIFTH KAGGLE COURSE
+            ====================================== -->
+
+            <div
+                class="reveal
+                       glass
+                       rounded-xl
+                       p-5
+                       flex
+                       items-center
+                       gap-4">
+
+                <div
+                    class="w-11
+                           h-11
+                           shrink-0
+                           rounded-lg
+                           bg-blue-500/10
+                           flex
+                           items-center
+                           justify-center
+                           text-blue-400
+                           font-bold">
+
+                    +
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="font-semibold">
+                        Additional Kaggle Course
+                    </h3>
+
+                    <p class="text-gray-500 text-sm">
+                        Course title to be added
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- =========================================
+         CONTACT
+    ========================================== -->
+
+    <section
+        id="contact"
+        class="py-24
+               px-6">
+
+        <div
+            class="max-w-4xl
+                   mx-auto">
+
+
+            <div
+                class="reveal
+                       glass
+                       rounded-3xl
+                       p-8
+                       md:p-16
+                       text-center">
+
+
+                <p
+                    class="text-blue-400
+                           uppercase
+                           tracking-[0.2em]
+                           text-sm
+                           font-semibold">
+
+                    06 / Contact
+
+                </p>
+
+
+                <h2
+                    class="text-4xl
+                           md:text-6xl
+                           font-bold
+                           mt-4">
+
+                    Let's connect.
+
+                </h2>
+
+
+                <p
+                    class="text-gray-500
+                           max-w-xl
+                           mx-auto
+                           mt-5
+                           leading-7">
+
+                    I'm interested in opportunities involving software,
+                    data engineering, artificial intelligence and
+                    data-driven systems.
+
+                </p>
+
+
+                <div
+                    class="flex
+                           flex-wrap
+                           justify-center
+                           gap-4
+                           mt-8">
+
+
+                    <!-- Email -->
+
+                    <a
+                        href="mailto:manishchapagain1111@gmail.com"
+                        class="bg-blue-600
+                               hover:bg-blue-700
+                               px-6
+                               py-3
+                               rounded-full
+                               font-semibold
+                               transition">
+
+                        Email Me
+
+                    </a>
+
+
+                    <!-- GitHub -->
+
+                    <a
+                        href="https://github.com/manish11111111"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="border
+                               border-white/10
+                               hover:border-blue-400
+                               px-6
+                               py-3
+                               rounded-full
+                               font-semibold
+                               transition">
+
+                        GitHub ↗
+
+                    </a>
+
+
+                    <!-- CV -->
+
+                    <a
+                        href="cv.pdf"
+                        download
+                        class="border
+                               border-white/10
+                               hover:border-blue-400
+                               px-6
+                               py-3
+                               rounded-full
+                               font-semibold
+                               transition">
+
+                        Download CV ↓
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer
+        class="border-t
+               border-white/10
+               py-8
+               px-6">
+
+        <div
+            class="max-w-6xl
+                   mx-auto
+                   flex
+                   flex-col
+                   md:flex-row
+                   justify-between
+                   items-center
+                   gap-3
+                   text-sm
+                   text-gray-600">
+
+            <p>
+                © 2026 Manish Chapagain
+            </p>
+
+
+            <p>
+                Built with HTML, Tailwind CSS & JavaScript
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+
+        /* =========================================
+           MOBILE MENU
+        ========================================== */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+
+        menuButton.addEventListener(
+            "click",
+            () => {
+
+                mobileMenu.classList.toggle("open");
+
+
+                menuButton.textContent =
+                    mobileMenu.classList.contains("open")
+                        ? "✕"
+                        : "☰";
+
+            }
+        );
+
+
+        /* Close mobile menu after clicking link */
+
+        document
+            .querySelectorAll(".mobile-link")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        mobileMenu.classList.remove("open");
+
+                        menuButton.textContent = "☰";
+
+                    }
+                );
+
+            });
+
+
+
+        /* =========================================
+           SCROLL REVEAL
+        ========================================== */
+
+        const observer =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(
+                        entry => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "active"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        document
+            .querySelectorAll(".reveal")
+            .forEach(element => {
+
+                observer.observe(element);
+
+            });
+
+
+
+        /* =========================================
+           TECHNOLOGY TAG STYLING
+        ========================================== */
+
+        document
+            .querySelectorAll(".tech")
+            .forEach(tag => {
+
+                tag.classList.add(
+                    "px-3",
+                    "py-1",
+                    "text-xs",
+                    "rounded-full",
+                    "bg-blue-500/10",
+                    "text-blue-300"
+                );
+
+            });
+
+
+
+        /* =========================================
+           CARD STAGGER ANIMATION
+        ========================================== */
+
+        document
+            .querySelectorAll(
+                ".project-card, .skill-card"
+            )
+            .forEach(
+                (element, index) => {
+
+                    element.style.transitionDelay =
+                        `${(index % 4) * 80}ms`;
+
+                }
+            );
+
+    </script>
+
+
+</body>
+
+</html>
