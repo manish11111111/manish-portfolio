@@ -1,833 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Manish Chapagain | Data & AI Engineer</title>
-
-    <meta
-        name="description"
-        content="Portfolio of Manish Chapagain, Computer Engineering graduate interested in Data Engineering, Artificial Intelligence and Knowledge-Driven Data Management."
-    >
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    animation: {
-                        float: "float 6s ease-in-out infinite",
-                        gradient: "gradient 8s ease infinite"
-                    },
-
-                    keyframes: {
-                        float: {
-                            "0%, 100%": {
-                                transform: "translateY(0)"
-                            },
-                            "50%": {
-                                transform: "translateY(-12px)"
-                            }
-                        },
-
-                        gradient: {
-                            "0%, 100%": {
-                                backgroundPosition: "0% 50%"
-                            },
-                            "50%": {
-                                backgroundPosition: "100% 50%"
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-
-    <style>
-
-        /* =========================================
-           BASE
-        ========================================== */
-
-        * {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background:
-                radial-gradient(
-                    circle at 15% 20%,
-                    rgba(37, 99, 235, 0.12),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 85% 30%,
-                    rgba(14, 165, 233, 0.08),
-                    transparent 30%
-                ),
-                #020617;
-
-            color: white;
-
-            font-family:
-                Inter,
-                system-ui,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                sans-serif;
-
-            overflow-x: hidden;
-        }
-
-
-        /* =========================================
-           GLASS EFFECT
-        ========================================== */
-
-        .glass {
-            background: rgba(255, 255, 255, 0.04);
-
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-
-        /* =========================================
-           GRID BACKGROUND
-        ========================================== */
-
-        .grid-bg {
-
-            background-image:
-                linear-gradient(
-                    rgba(255, 255, 255, 0.035) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(255, 255, 255, 0.035) 1px,
-                    transparent 1px
-                );
-
-            background-size: 50px 50px;
-        }
-
-
-        /* =========================================
-           GRADIENT TEXT
-        ========================================== */
-
-        .gradient-text {
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #60a5fa,
-                    #38bdf8,
-                    #818cf8
-                );
-
-            background-size: 200% 200%;
-
-            -webkit-background-clip: text;
-            background-clip: text;
-
-            color: transparent;
-        }
-
-
-        /* =========================================
-           PROJECT CARDS
-        ========================================== */
-
-        .project-card {
-
-            transition:
-                transform 0.35s ease,
-                border-color 0.35s ease,
-                box-shadow 0.35s ease;
-        }
-
-
-        .project-card:hover {
-
-            transform: translateY(-9px);
-
-            border-color:
-                rgba(59, 130, 246, 0.55);
-
-            box-shadow:
-                0 20px 50px rgba(0, 0, 0, 0.35),
-                0 0 35px rgba(37, 99, 235, 0.08);
-        }
-
-
-        /* =========================================
-           SKILL CARDS
-        ========================================== */
-
-        .skill-card {
-
-            transition:
-                transform 0.3s ease,
-                border-color 0.3s ease;
-        }
-
-
-        .skill-card:hover {
-
-            transform: translateY(-5px);
-
-            border-color:
-                rgba(59, 130, 246, 0.45);
-        }
-
-
-        /* =========================================
-           SCROLL REVEAL
-        ========================================== */
-
-        .reveal {
-
-            opacity: 0;
-
-            transform: translateY(35px);
-
-            transition:
-                opacity 0.8s ease,
-                transform 0.8s ease;
-        }
-
-
-        .reveal.active {
-
-            opacity: 1;
-
-            transform: translateY(0);
-        }
-
-
-        /* =========================================
-           MOBILE MENU
-        ========================================== */
-
-        .mobile-menu {
-
-            max-height: 0;
-
-            overflow: hidden;
-
-            transition:
-                max-height 0.35s ease;
-        }
-
-
-        .mobile-menu.open {
-
-            max-height: 500px;
-        }
-
-
-        /* =========================================
-           SCROLLBAR
-        ========================================== */
-
-        ::-webkit-scrollbar {
-
-            width: 7px;
-        }
-
-
-        ::-webkit-scrollbar-track {
-
-            background: #020617;
-        }
-
-
-        ::-webkit-scrollbar-thumb {
-
-            background: #1d4ed8;
-
-            border-radius: 20px;
-        }
-
-
-        /* =========================================
-           TEXT SELECTION
-        ========================================== */
-
-        ::selection {
-
-            background:
-                rgba(59, 130, 246, 0.35);
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manish Chapagain – Data &amp; AI Engineer</title>
+<meta name="description" content="Computer engineering graduate building knowledge graphs, recommender systems and data-driven apps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f5f1; --surface:#ffffff; --ink:#14282d; --muted:#4d6166;
+  --line:#cfd9d4; --accent:#0f6b63; --accent-ink:#ffffff; --mark:#d98e04;
+  --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#10191b; --surface:#172326; --ink:#e6eeea; --muted:#9bb0ab;
+    --line:#2b3c3f; --accent:#4fc3b4; --accent-ink:#0b1415; --mark:#f0b43a;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10191b; --surface:#172326; --ink:#e6eeea; --muted:#9bb0ab;
+  --line:#2b3c3f; --accent:#4fc3b4; --accent-ink:#0b1415; --mark:#f0b43a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 var(--sans)}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--mark);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.logo{font:600 1.05rem var(--serif);color:var(--ink);text-decoration:none}
+.links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.links a{color:var(--muted);text-decoration:none;font-size:.92rem}
+.links a:hover{color:var(--accent)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:4px 12px;font:inherit;font-size:.85rem;cursor:pointer}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:72px 0 56px}
+h1{font:600 clamp(2.4rem,6vw,3.8rem)/1.08 var(--serif);margin:0 0 12px;letter-spacing:-.01em}
+.role{font-size:1.15rem;color:var(--accent);font-weight:500;margin:0 0 16px}
+.lead{color:var(--muted);max-width:52ch;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;font-weight:500;text-decoration:none;border:1px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent)}
+.btn:hover{opacity:.88}
+.graph{width:100%;height:auto}
+.graph line{stroke:var(--line);stroke-width:1.5}
+.graph circle{fill:var(--surface);stroke:var(--accent);stroke-width:2}
+.graph .core{fill:var(--accent)}
+.graph .hot{stroke:var(--mark)}
+.graph text{fill:var(--ink);font:500 12px var(--sans)}
+.graph .core-t{fill:var(--accent-ink);font-weight:600}
+.graph .rel{fill:var(--muted);font-size:10px;font-style:italic}
+
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font:600 1.7rem/1.2 var(--serif);margin:0 0 28px}
+h3{font:600 1.1rem/1.3 var(--sans);margin:0}
+.stats{display:flex;gap:32px;flex-wrap:wrap;margin-top:24px}
+.stats div{max-width:200px;color:var(--muted);font-size:.9rem}
+.stats b{display:block;color:var(--ink);font:600 1.5rem var(--serif)}
+
+.item{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:0 0 28px}
+.when{color:var(--muted);font-size:.9rem}
+.item p,.item ul{margin:6px 0 0;color:var(--muted)}
+.item ul{padding-left:18px}
+.item li{margin:4px 0}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:22px;display:flex;flex-direction:column}
+.card.feature{border-left-color:var(--mark)}
+.card p{color:var(--muted);margin:8px 0 12px;font-size:.95rem}
+.card ul{padding-left:18px;margin:0 0 14px;color:var(--muted);font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:auto 0 14px;padding:0;list-style:none}
+.tags li{font-size:.78rem;border:1px solid var(--line);border-radius:4px;padding:2px 8px;color:var(--muted)}
+.card .row{display:flex;gap:16px;font-size:.92rem;font-weight:500}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.skills h3{margin-bottom:6px}
+.skills p{margin:0;color:var(--muted)}
+
+.certs{columns:2;column-gap:40px;padding-left:18px;margin:0;color:var(--muted)}
+.certs li{margin:6px 0;break-inside:avoid}
+.certs b{color:var(--ink);font-weight:500}
+
+.contact p{max-width:55ch;color:var(--muted)}
+.contact ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:8px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.88rem}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:40px}
+  .item{grid-template-columns:1fr;gap:4px}
+  .certs{columns:1}
+  .links a.hide-sm{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
-
-
 <body>
 
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="logo" href="#top">Manish Chapagain</a>
+      <div class="links">
+        <a class="hide-sm" href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a class="hide-sm" href="#skills">Skills</a>
+        <a class="hide-sm" href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <button id="theme" type="button" aria-label="Toggle light and dark theme">Theme</button>
+      </div>
+    </nav>
+  </div>
+</header>
 
-    <!-- =========================================
-         BACKGROUND
-    ========================================== -->
+<main id="top" class="wrap">
 
-    <div
-        class="grid-bg
-               fixed
-               inset-0
-               -z-10
-               opacity-40
-               pointer-events-none">
+  <div class="hero">
+    <div>
+      <h1>Manish Chapagain</h1>
+      <p class="role">Computer engineer · Aspiring data &amp; AI engineer</p>
+      <p class="lead">I build knowledge graphs, recommender systems and data-driven apps. I’m looking for advanced study in data engineering and AI, to build systems that turn connected data into useful answers.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn ghost" href="mailto:manishchapagain1111@gmail.com">Email me</a>
+      </div>
     </div>
 
-
-
-    <!-- =========================================
-         NAVIGATION
-    ========================================== -->
-
-    <header
-        class="fixed
-               top-0
-               left-0
-               right-0
-               z-50">
-
-        <nav class="glass">
-
-            <div
-                class="max-w-6xl
-                       mx-auto
-                       px-6
-                       py-4
-                       flex
-                       items-center
-                       justify-between">
-
-                <!-- Logo -->
-
-                <a
-                    href="#home"
-                    class="text-xl
-                           font-extrabold
-                           tracking-tight">
-
-                    Manish<span class="text-blue-400">.</span>
-
-                </a>
-
-
-                <!-- Desktop Navigation -->
-
-                <div
-                    class="hidden
-                           md:flex
-                           items-center
-                           gap-7
-                           text-sm">
-
-                    <a
-                        href="#about"
-                        class="text-gray-300
-                               hover:text-blue-400
-                               transition">
-                        About
-                    </a>
-
-                    <a
-                        href="#skills"
-                        class="text-gray-300
-                               hover:text-blue-400
-                               transition">
-                        Skills
-                    </a>
-
-                    <a
-                        href="#projects"
-                        class="text-gray-300
-                               hover:text-blue-400
-                               transition">
-                        Projects
-                    </a>
-
-                    <a
-                        href="#education"
-                        class="text-gray-300
-                               hover:text-blue-400
-                               transition">
-                        Education
-                    </a>
-
-                    <a
-                        href="#certifications"
-                        class="text-gray-300
-                               hover:text-blue-400
-                               transition">
-                        Certifications
-                    </a>
-
-                    <a
-                        href="#contact"
-                        class="text-gray-300
-                               hover:text-blue-400
-                               transition">
-                        Contact
-                    </a>
-
-
-                    <!-- CV -->
-
-                    <a
-                        href="cv.pdf"
-                        download
-                        class="bg-blue-600
-                               hover:bg-blue-700
-                               px-4
-                               py-2
-                               rounded-lg
-                               transition">
-
-                        Download CV
-
-                    </a>
-
-                </div>
-
-
-                <!-- Mobile Menu Button -->
-
-                <button
-                    id="menuButton"
-                    class="md:hidden
-                           text-2xl
-                           text-gray-300"
-                    aria-label="Open navigation menu">
-
-                    ☰
-
-                </button>
-
-            </div>
-
-
-            <!-- Mobile Menu -->
-
-            <div
-                id="mobileMenu"
-                class="mobile-menu
-                       md:hidden
-                       border-t
-                       border-white/10">
-
-                <div
-                    class="px-6
-                           py-5
-                           flex
-                           flex-col
-                           gap-5
-                           text-gray-300">
-
-                    <a href="#about" class="mobile-link">
-                        About
-                    </a>
-
-                    <a href="#skills" class="mobile-link">
-                        Skills
-                    </a>
-
-                    <a href="#projects" class="mobile-link">
-                        Projects
-                    </a>
-
-                    <a href="#education" class="mobile-link">
-                        Education
-                    </a>
-
-                    <a href="#certifications" class="mobile-link">
-                        Certifications
-                    </a>
-
-                    <a href="#contact" class="mobile-link">
-                        Contact
-                    </a>
-
-                    <a
-                        href="cv.pdf"
-                        download
-                        class="bg-blue-600
-                               text-center
-                               py-3
-                               rounded-lg">
-
-                        Download CV
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </nav>
-
-    </header>
-
-
-
-    <!-- =========================================
-         HERO SECTION
-    ========================================== -->
-
-    <section
-        id="home"
-        class="min-h-screen
-               flex
-               items-center
-               justify-center
-               px-6
-               pt-24">
-
-        <div
-            class="max-w-5xl
-                   text-center">
-
-
-            <!-- Status -->
-
-            <div
-                class="reveal
-                       inline-flex
-                       items-center
-                       gap-2
-                       glass
-                       px-4
-                       py-2
-                       rounded-full
-                       text-sm
-                       text-gray-300
-                       mb-8">
-
-                <span
-                    class="w-2
-                           h-2
-                           rounded-full
-                           bg-green-400
-                           animate-pulse">
-                </span>
-
-                Computer Engineering Graduate
-
-            </div>
-
-
-            <!-- Heading -->
-
-            <h1
-                class="reveal
-                       text-5xl
-                       sm:text-6xl
-                       md:text-8xl
-                       font-extrabold
-                       tracking-tight
-                       leading-tight">
-
-                Hello, I'm
-
-                <span
-                    class="gradient-text
-                           animate-gradient">
-
-                    Manish Chapagain
-
-                </span>
-
-            </h1>
-
-
-            <!-- Subtitle -->
-
-            <p
-                class="reveal
-                       text-lg
-                       md:text-2xl
-                       text-gray-400
-                       mt-6">
-
-                Computer Engineering Graduate
-
-                <span class="text-blue-400">
-                    |
-                </span>
-
-                Aspiring Data & AI Engineer
-
-            </p>
-
-
-            <!-- Description -->
-
-            <p
-                class="reveal
-                       text-gray-500
-                       max-w-2xl
-                       mx-auto
-                       mt-6
-                       leading-7">
-
-                Interested in Data Engineering, Artificial Intelligence,
-                knowledge-driven systems and building practical
-                software solutions using data and technology.
-
-            </p>
-
-
-            <!-- Buttons -->
-
-            <div
-                class="reveal
-                       flex
-                       flex-wrap
-                       justify-center
-                       gap-4
-                       mt-9">
-
-
-                <!-- Projects -->
-
-                <a
-                    href="#projects"
-                    class="bg-blue-600
-                           hover:bg-blue-700
-                           px-7
-                           py-3
-                           rounded-full
-                           font-semibold
-                           transition
-                           hover:-translate-y-1">
-
-                    View Projects →
-
-                </a>
-
-
-                <!-- CV -->
-
-                <a
-                    href="cv.pdf"
-                    download
-                    class="border
-                           border-white/15
-                           hover:bg-white
-                           hover:text-black
-                           px-7
-                           py-3
-                           rounded-full
-                           font-semibold
-                           transition
-                           hover:-translate-y-1">
-
-                    Download CV ↓
-
-                </a>
-
-
-                <!-- GitHub -->
-
-                <a
-                    href="https://github.com/manish11111111"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="glass
-                           px-7
-                           py-3
-                           rounded-full
-                           font-semibold
-                           hover:border-blue-400
-                           transition">
-
-                    GitHub ↗
-
-                </a>
-
-            </div>
-
-
-            <!-- Scroll indicator -->
-
-            <div
-                class="mt-20
-                       animate-bounce
-                       text-gray-600">
-
-                ↓
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-         ABOUT
-    ========================================== -->
-
-    <section
-        id="about"
-        class="py-24
-               px-6">
-
-        <div
-            class="max-w-5xl
-                   mx-auto">
-
-
-            <!-- Section heading -->
-
-            <div class="reveal mb-12">
-
-                <p
-                    class="text-blue-400
-                           uppercase
-                           tracking-[0.2em]
-                           text-sm
-                           font-semibold">
-
-                    01 / About
-
-                </p>
-
-
-                <h2
-                    class="text-4xl
-                           md:text-5xl
-                           font-bold
-                           mt-3">
-
-                    A little about me.
-
-                </h2>
-
-            </div>
-
-
-            <div
-                class="grid
-                       md:grid-cols-2
-                       gap-10
-                       items-start">
-
-
-                <!-- About Text -->
-
-                <div
-                    class="reveal
-                           space-y-5
-                           text-gray-400
-                           leading-7">
-
-                    <p>
-
-                        My journey into technology started from an
-                        unexpected direction. Coming from a Biology
-                        background, I initially had a different academic
-                        path before choosing Computer Engineering.
-
-                    </p>
-
-
-                    <p>
-
-                        During my undergraduate studies, I gradually
-                        developed a strong interest in programming,
-                        databases, software development and intelligent
-                        systems.
-
-                    </p>
-
-
-                    <p>
-
-                        Building projects such as MovieFlix, a hybrid movie recommender, a Neo4j knowledge graph and database-driven management systems
-                        helped me understand how concepts learned in
-                        classrooms can be transformed into practical
-                        solutions.
-
-                    </p>
-
-
-                    <p>
-
-                        My current interests lie at the intersection of
-
-                        <span class="text-blue-400">
-
-                            data management, data engineering and AI
-
-                        </span>
-
-                        , particularly systems that can connect,
-                        organize and make meaningful use of data.
-
-                    </p>
-
-                </div>
-
-
-                <!-- About Card -->
-
-                <div
-                    class="reveal
-                           glass
-                           rounded-2xl
-                           p-7">
-
-                    <div class="space-y-7">
-
-
-                        <div>
-
-                            <p class="text-gray-500 text-sm">
-                                Education
-                            </p>
-
-                            <p class="font-semibold mt-1">
-                                Bachelor of Computer Engineering
-                            </p>
-
-                        </div>
-
-
-                        <div>
-
-                            <p class="text-gray-500 text-sm">
-                                Academic Performance
-                            </p>
-
-                            <p class="font-semibold mt-1">
-                                GPA 3.66 / 4.00
-                            </p>
-
-                        </div>
-
-
-                        <div>
-
-                            <p class="text-gray-500 text-sm">
-                                Primary Interests
-                            </p>
-
-                            <p class="font-semibold mt-1">
-        
+    <svg class="graph" viewBox="0 0 360 300" role="img" aria-label="A small knowledge graph: Manish builds a recommender and a knowledge graph, using Python, Neo4j and scikit-learn.">
+      <line x1="180" y1="150" x2="80" y2="70"/>
+      <line x1="180" y1="150" x2="285" y2="70"/>
+      <line x1="80" y1="70" x2="60" y2="180"/>
+      <line x1="80" y1="70" x2="150" y2="245"/>
+      <line x1="285" y1="70" x2="300" y2="190"/>
+      <line x1="285" y1="70" x2="150" y2="245"/>
+      <line x1="180" y1="150" x2="150" y2="245"/>
+      <text class="rel" x="110" y="100">built</text>
+      <text class="rel" x="238" y="100">built</text>
+      <text class="rel" x="35" y="130">uses</text>
+      <text class="rel" x="296" y="135">uses</text>
+      <circle class="core" cx="180" cy="150" r="34"/>
+      <text class="core-t" x="180" y="154" text-anchor="middle">Manish</text>
+      <circle class="hot" cx="80" cy="70" r="30"/>
+      <text x="80" y="66" text-anchor="middle">Knowledge</text>
+      <text x="80" y="80" text-anchor="middle">Graph</text>
+      <circle class="hot" cx="285" cy="70" r="30"/>
+      <text x="285" y="66" text-anchor="middle">Hybrid</text>
+      <text x="285" y="80" text-anchor="middle">Recommender</text>
+      <circle cx="60" cy="180" r="24"/>
+      <text x="60" y="184" text-anchor="middle">Neo4j</text>
+      <circle cx="300" cy="190" r="26"/>
+      <text x="300" y="194" text-anchor="middle">sklearn</text>
+      <circle cx="150" cy="245" r="26"/>
+      <text x="150" y="249" text-anchor="middle">Python</text>
+    </svg>
+  </div>
+
+  <section id="about">
+    <h2>About</h2>
+    <p style="max-width:68ch;color:var(--muted);margin:0">I’m a Computer Engineering graduate with a solid foundation in software development, database management and application design. I’ve worked with Python, SQL, Neo4j/Cypher, scikit-learn, Kotlin, Java, PHP, JavaScript, Firebase and REST APIs. I want to go deeper into data engineering and AI to build knowledge-driven, data-intensive systems that solve real-world problems.</p>
+    <div class="stats">
+      <div><b>3.66 / 4.00</b>CGPA, B.E. Computer Engineering</div>
+      <div><b>0.0210</b>F1@10 of my hybrid recommender vs 0.0112 for the baseline</div>
+      <div><b>100,836</b>ratings modelled in a Neo4j graph</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+
+      <article class="card feature">
+        <h3>MovieLens Knowledge Graph</h3>
+        <ul>
+          <li>Modelled MovieLens (610 users, 9,742 movies, 100,836 ratings) as a Neo4j property graph, with Cypher data-quality checks.</li>
+          <li>Wrote Cypher queries for genre-based and collaborative recommendation baselines.</li>
+          <li>Deployed a Streamlit dashboard with PyVis graph visualisation.</li>
+        </ul>
+        <ul class="tags"><li>Python</li><li>Neo4j Aura</li><li>Cypher</li><li>Streamlit</li><li>PyVis</li></ul>
+        <div class="row"><a href="https://github.com/manish11111111">GitHub</a><a href="#">Live demo</a></div>
+      </article>
+
+      <article class="card feature">
+        <h3>MovieLens Hybrid Recommender</h3>
+        <ul>
+          <li>Combined collaborative and content-based filtering, and tuned the weighting on a validation set (70/10/20 split).</li>
+          <li>Test F1@10 of 0.0210 vs 0.0112 for the collaborative baseline, about 87.5% relative improvement.</li>
+          <li>Deployed as an interactive Streamlit app.</li>
+        </ul>
+        <ul class="tags"><li>Python</li><li>Pandas</li><li>scikit-learn</li><li>Streamlit</li></ul>
+        <div class="row"><a href="https://github.com/manish11111111">GitHub</a><a href="#">Live demo</a></div>
+      </article>
+
+      <article class="card">
+        <h3>MovieFlix</h3>
+        <p>Android movie streaming app. I led a team of three as main developer, and built Firebase authentication, profiles, subscriptions and storage, plus TMDB API integration through Retrofit.</p>
+        <ul class="tags"><li>Kotlin</li><li>Firebase</li><li>Retrofit</li><li>TMDB API</li></ul>
+        <div class="row"><a href="https://github.com/manish11111111">GitHub</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Hotel Management System</h3>
+        <p>Web-based hotel management application with a MySQL backend. I led a team of three as main developer.</p>
+        <ul class="tags"><li>PHP</li><li>JavaScript</li><li>MySQL</li><li>XAMPP</li></ul>
+        <div class="row"><a href="https://github.com/manish11111111">GitHub</a></div>
+      </article>
+
+      <article class="card">
+        <h3>School Management System</h3>
+        <p>C# desktop application for managing students, teachers and courses.</p>
+        <ul class="tags"><li>C#</li></ul>
+        <div class="row"><a href="https://github.com/manish11111111">GitHub</a></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Programming languages</h3><p>Python, Java, Kotlin, C#, JavaScript, PHP, C++, C</p></div>
+      <div><h3>Data &amp; databases</h3><p>SQL, MySQL, Neo4j, Cypher, Firebase, Pandas, NumPy</p></div>
+      <div><h3>Machine learning</h3><p>scikit-learn, collaborative and content-based filtering, recommender evaluation (Precision@K, Recall@K, F1@K)</p></div>
+      <div><h3>Development</h3><p>Android development, web development, REST APIs, Retrofit, Streamlit</p></div>
+      <div><h3>Programming concepts</h3><p>Object-oriented programming, data structures and algorithms</p></div>
+      <div><h3>Tools</h3><p>Android Studio, Git, GitHub, XAMPP</p></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="item">
+      <div class="when">02/2022 – 03/2026</div>
+      <div>
+        <h3>B.E. in Computer Engineering</h3>
+        <p>Nepal Engineering College, Changunarayan, Bhaktapur</p>
+        <ul>
+          <li>CGPA: 3.66 / 4.00</li>
+          <li>Academic Excellence Award, 4.00 SGPA in 6th semester (2024)</li>
+          <li>Topper Merit Scholarship (2024)</li>
+          <li>Grade A in Database Management Systems and Artificial Intelligence</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <div class="when">07/2019 – 04/2021</div>
+      <div>
+        <h3>Higher Secondary Education, Science</h3>
+        <p>Capital Secondary School, Koteshwor, Kathmandu · GPA 3.59 / 4.00</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="when">04/2017 – 03/2019</div>
+      <div>
+        <h3>Secondary Education Examination (SEE)</h3>
+        <p>Sagarmatha English School, Belbari, Morang · GPA 3.60 / 4.00</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul class="certs">
+      <li><b>General Registered Engineer</b>, Nepal Engineering Council</li>
+      <li><b>IELTS Academic</b>, overall band 8.0 (Listening 8.5, Reading 8.5, Writing 7.5, Speaking 6.5)</li>
+      <li><b>Python</b>, Kaggle</li>
+      <li><b>Pandas</b>, Kaggle</li>
+      <li><b>SQL</b>, Kaggle</li>
+      <li><b>Intro to Machine Learning</b>, Kaggle</li>
+      <li><b>Intermediate Machine Learning</b>, Kaggle</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>I’m open to graduate study and entry-level data and AI roles. The quickest way to reach me is email.</p>
+    <ul>
+      <li>Email: <a href="mailto:manishchapagain1111@gmail.com">manishchapagain1111@gmail.com</a></li>
+      <li>Phone: <a href="tel:+9779763617636">+977 9763617636</a></li>
+      <li>LinkedIn: <a href="https://linkedin.com/in/manish-chapagain-467451284">linkedin.com/in/manish-chapagain-467451284</a></li>
+      <li>GitHub: <a href="https://github.com/manish11111111">github.com/manish11111111</a></li>
+      <li>Location: Kathmandu, Nepal</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> Manish Chapagain</div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s);}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||
+      (!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
