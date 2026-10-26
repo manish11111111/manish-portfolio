@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Manish Chapagain – Data &amp; AI Engineer</title>
-<meta name="description" content="Computer engineering graduate building knowledge graphs, recommender systems and data-driven apps.">
+<meta name="description" content="Computer engineering graduate building data pipelines, knowledge graphs, and recommender systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
@@ -28,76 +28,88 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 var(--sans)}
-a{color:var(--accent)}
+a{color:var(--accent);text-decoration:none;transition:color 0.2s}
+a:hover{text-decoration:underline}
 a:focus-visible,button:focus-visible{outline:3px solid var(--mark);outline-offset:3px;border-radius:4px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
 
 /* nav */
-header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
-.logo{font:600 1.05rem var(--serif);color:var(--ink);text-decoration:none}
-.links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-.links a{color:var(--muted);text-decoration:none;font-size:.92rem}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.logo{font:600 1.15rem var(--serif);color:var(--ink);letter-spacing:-0.02em}
+.links{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.links a{color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:500}
 .links a:hover{color:var(--accent)}
-#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:4px 12px;font:inherit;font-size:.85rem;cursor:pointer}
+#theme{background:var(--surface);border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:6px 14px;font:inherit;font-size:.85rem;cursor:pointer;transition:background 0.2s}
+#theme:hover{background:var(--line)}
 
 /* hero */
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:72px 0 56px}
-h1{font:600 clamp(2.4rem,6vw,3.8rem)/1.08 var(--serif);margin:0 0 12px;letter-spacing:-.01em}
-.role{font-size:1.15rem;color:var(--accent);font-weight:500;margin:0 0 16px}
-.lead{color:var(--muted);max-width:52ch;margin:0 0 28px}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:11px 20px;border-radius:6px;font-weight:500;text-decoration:none;border:1px solid var(--accent)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:80px 0 64px}
+h1{font:600 clamp(2.5rem,6vw,3.8rem)/1.05 var(--serif);margin:0 0 16px;letter-spacing:-.02em;color:var(--ink)}
+.role{font-size:1.15rem;color:var(--accent);font-weight:600;margin:0 0 20px;letter-spacing:0.01em}
+.lead{color:var(--muted);max-width:55ch;margin:0 0 32px;font-size:1.05rem}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 24px;border-radius:6px;font-weight:600;text-decoration:none;border:1px solid var(--accent);font-size:0.95rem;transition:all 0.2s}
 .btn.primary{background:var(--accent);color:var(--accent-ink)}
-.btn.ghost{color:var(--accent)}
-.btn:hover{opacity:.88}
+.btn.primary:hover{opacity:0.9;text-decoration:none}
+.btn.ghost{color:var(--accent);background:transparent}
+.btn.ghost:hover{background:var(--accent);color:var(--accent-ink);text-decoration:none}
+
+/* svg graph */
 .graph{width:100%;height:auto}
 .graph line{stroke:var(--line);stroke-width:1.5}
 .graph circle{fill:var(--surface);stroke:var(--accent);stroke-width:2}
 .graph .core{fill:var(--accent)}
-.graph .hot{stroke:var(--mark)}
+.graph .hot{stroke:var(--mark);stroke-width:2.5}
 .graph text{fill:var(--ink);font:500 12px var(--sans)}
 .graph .core-t{fill:var(--accent-ink);font-weight:600}
 .graph .rel{fill:var(--muted);font-size:10px;font-style:italic}
 
 /* sections */
-section{padding:56px 0;border-top:1px solid var(--line)}
-h2{font:600 1.7rem/1.2 var(--serif);margin:0 0 28px}
-h3{font:600 1.1rem/1.3 var(--sans);margin:0}
-.stats{display:flex;gap:32px;flex-wrap:wrap;margin-top:24px}
-.stats div{max-width:200px;color:var(--muted);font-size:.9rem}
-.stats b{display:block;color:var(--ink);font:600 1.5rem var(--serif)}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font:600 1.8rem/1.2 var(--serif);margin:0 0 32px;letter-spacing:-0.01em;color:var(--ink);display:flex;align-items:center;gap:12px}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+h3{font:600 1.15rem/1.3 var(--sans);margin:0 0 6px;color:var(--ink)}
+.stats{display:flex;gap:32px;flex-wrap:wrap;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.stats div{max-width:220px;color:var(--muted);font-size:.9rem;line-height:1.5}
+.stats b{display:block;color:var(--ink);font:600 1.8rem var(--serif);margin-bottom:4px;letter-spacing:-0.01em}
 
-.item{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:0 0 28px}
-.when{color:var(--muted);font-size:.9rem}
-.item p,.item ul{margin:6px 0 0;color:var(--muted)}
-.item ul{padding-left:18px}
-.item li{margin:4px 0}
+.item{display:grid;grid-template-columns:190px 1fr;gap:28px;padding:0 0 32px}
+.when{color:var(--muted);font-size:.9rem;font-weight:500;padding-top:2px}
+.item p,.item ul{margin:8px 0 0;color:var(--muted);font-size:.95rem}
+.item ul{padding-left:20px}
+.item li{margin:6px 0}
 
-.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.card{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:22px;display:flex;flex-direction:column}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:24px;display:flex;flex-direction:column;transition:transform 0.2s, box-shadow 0.2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.05)}
 .card.feature{border-left-color:var(--mark)}
-.card p{color:var(--muted);margin:8px 0 12px;font-size:.95rem}
-.card ul{padding-left:18px;margin:0 0 14px;color:var(--muted);font-size:.95rem}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin:auto 0 14px;padding:0;list-style:none}
-.tags li{font-size:.78rem;border:1px solid var(--line);border-radius:4px;padding:2px 8px;color:var(--muted)}
-.card .row{display:flex;gap:16px;font-size:.92rem;font-weight:500}
+.card p{color:var(--muted);margin:0 0 16px;font-size:.95rem}
+.card ul{padding-left:20px;margin:0 0 16px;color:var(--muted);font-size:.95rem}
+.card li{margin-bottom:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:auto 0 16px;padding:0;list-style:none}
+.tags li{font-size:.75rem;border:1px solid var(--line);border-radius:4px;padding:3px 8px;color:var(--muted);background:var(--bg);font-weight:500}
+.card .row{display:flex;gap:16px;font-size:.92rem;font-weight:600;margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+.card .row a{display:flex;align-items:center;gap:4px}
 
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.skills h3{margin-bottom:6px}
-.skills p{margin:0;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
+.skills h3{margin-bottom:8px;font-size:1.05rem}
+.skills p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.6}
 
-.certs{columns:2;column-gap:40px;padding-left:18px;margin:0;color:var(--muted)}
-.certs li{margin:6px 0;break-inside:avoid}
-.certs b{color:var(--ink);font-weight:500}
+.certs{columns:2;column-gap:40px;padding-left:20px;margin:0;color:var(--muted)}
+.certs li{margin:8px 0;break-inside:avoid;font-size:.95rem}
+.certs b{color:var(--ink);font-weight:600}
 
-.contact p{max-width:55ch;color:var(--muted)}
-.contact ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:8px}
-footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.88rem}
+.contact p{max-width:55ch;color:var(--muted);font-size:1.05rem;margin-bottom:24px}
+.contact ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.contact li{display:flex;align-items:center;gap:8px;font-size:.95rem}
+.contact li strong{color:var(--ink);min-width:80px}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.88rem;text-align:center}
 
 @media (max-width:760px){
-  .hero{grid-template-columns:1fr;padding-top:40px}
-  .item{grid-template-columns:1fr;gap:4px}
+  .hero{grid-template-columns:1fr;padding-top:48px;gap:32px}
+  .hero .graph{max-width:400px;margin:0 auto}
+  .item{grid-template-columns:1fr;gap:8px}
   .certs{columns:1}
   .links a.hide-sm{display:none}
 }
@@ -127,49 +139,68 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   <div class="hero">
     <div>
       <h1>Manish Chapagain</h1>
-      <p class="role">Computer engineer · Aspiring data &amp; AI engineer</p>
-      <p class="lead">I build knowledge graphs, recommender systems and data-driven apps. I’m looking for advanced study in data engineering and AI, to build systems that turn connected data into useful answers.</p>
+      <p class="role">Computer Engineer · Data &amp; AI</p>
+      <p class="lead">I build reliable data pipelines, knowledge graphs, and recommender systems. I’m seeking advanced study in Data Engineering and AI to build systems that turn scattered public data into structured, intelligent applications.</p>
       <div class="btns">
-        <a class="btn primary" href="#projects">See my projects</a>
-        <a class="btn ghost" href="mailto:manishchapagain1111@gmail.com">Email me</a>
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn ghost" href="mailto:manishchapagain1111@gmail.com">Email Me</a>
       </div>
     </div>
 
-    <svg class="graph" viewBox="0 0 360 300" role="img" aria-label="A small knowledge graph: Manish builds a recommender and a knowledge graph, using Python, Neo4j and scikit-learn.">
-      <line x1="180" y1="150" x2="80" y2="70"/>
-      <line x1="180" y1="150" x2="285" y2="70"/>
-      <line x1="80" y1="70" x2="60" y2="180"/>
-      <line x1="80" y1="70" x2="150" y2="245"/>
-      <line x1="285" y1="70" x2="300" y2="190"/>
-      <line x1="285" y1="70" x2="150" y2="245"/>
-      <line x1="180" y1="150" x2="150" y2="245"/>
-      <text class="rel" x="110" y="100">built</text>
-      <text class="rel" x="238" y="100">built</text>
+    <!-- Updated SVG Graph: Now includes Data Pipeline -->
+    <svg class="graph" viewBox="0 0 360 300" role="img" aria-label="A knowledge graph showing Manish, a Data Pipeline, Recommender, and Knowledge Graph, using Python, PostgreSQL, Neo4j, and scikit-learn.">
+      <!-- Lines -->
+      <line x1="180" y1="150" x2="80" y2="70"/>   <!-- Manish to Pipeline -->
+      <line x1="180" y1="150" x2="285" y2="70"/>  <!-- Manish to Recommender -->
+      <line x1="180" y1="150" x2="150" y2="245"/> <!-- Manish to KG -->
+      <line x1="80" y1="70" x2="60" y2="180"/>    <!-- Pipeline to PostgreSQL -->
+      <line x1="285" y1="70" x2="300" y2="190"/>  <!-- Recommender to sklearn -->
+      <line x1="150" y1="245" x2="60" y2="180"/>  <!-- KG to Neo4j -->
+      
+      <!-- Relationship Text -->
+      <text class="rel" x="105" y="100">builds</text>
+      <text class="rel" x="240" y="100">builds</text>
+      <text class="rel" x="165" y="210">builds</text>
       <text class="rel" x="35" y="130">uses</text>
       <text class="rel" x="296" y="135">uses</text>
-      <circle class="core" cx="180" cy="150" r="34"/>
+      <text class="rel" x="90" y="220">uses</text>
+
+      <!-- Core Node (Manish) -->
+      <circle class="core" cx="180" cy="150" r="36"/>
       <text class="core-t" x="180" y="154" text-anchor="middle">Manish</text>
-      <circle class="hot" cx="80" cy="70" r="30"/>
-      <text x="80" y="66" text-anchor="middle">Knowledge</text>
-      <text x="80" y="80" text-anchor="middle">Graph</text>
-      <circle class="hot" cx="285" cy="70" r="30"/>
-      <text x="285" y="66" text-anchor="middle">Hybrid</text>
-      <text x="285" y="80" text-anchor="middle">Recommender</text>
+      
+      <!-- Project Nodes -->
+      <circle class="hot" cx="80" cy="70" r="34"/>
+      <text x="80" y="66" text-anchor="middle" font-weight="600">Data</text>
+      <text x="80" y="80" text-anchor="middle" font-weight="600">Pipeline</text>
+
+      <circle class="hot" cx="285" cy="70" r="34"/>
+      <text x="285" y="66" text-anchor="middle" font-weight="600">Hybrid</text>
+      <text x="285" y="80" text-anchor="middle" font-weight="600">Recommender</text>
+      
+      <circle class="hot" cx="150" cy="245" r="30"/>
+      <text x="150" y="241" text-anchor="middle" font-weight="600">Knowledge</text>
+      <text x="150" y="255" text-anchor="middle" font-weight="600">Graph</text>
+
+      <!-- Tech Nodes -->
       <circle cx="60" cy="180" r="24"/>
-      <text x="60" y="184" text-anchor="middle">Neo4j</text>
+      <text x="60" y="184" text-anchor="middle">PostgreSQL</text>
+
       <circle cx="300" cy="190" r="26"/>
       <text x="300" y="194" text-anchor="middle">sklearn</text>
-      <circle cx="150" cy="245" r="26"/>
-      <text x="150" y="249" text-anchor="middle">Python</text>
+
+      <circle cx="60" cy="250" r="24"/>
+      <text x="60" y="254" text-anchor="middle">Neo4j</text>
     </svg>
   </div>
 
   <section id="about">
     <h2>About</h2>
-    <p style="max-width:68ch;color:var(--muted);margin:0">I’m a Computer Engineering graduate with a solid foundation in software development, database management and application design. I’ve worked with Python, SQL, Neo4j/Cypher, scikit-learn, Kotlin, Java, PHP, JavaScript, Firebase and REST APIs. I want to go deeper into data engineering and AI to build knowledge-driven, data-intensive systems that solve real-world problems.</p>
+    <p style="max-width:68ch;color:var(--muted);margin:0;font-size:1.05rem">I’m a Computer Engineering graduate with a solid foundation in software development, database management, and data engineering. I’ve worked with Python, SQL, PostgreSQL, Neo4j/Cypher, Docker, scikit-learn, Kotlin, Java, PHP, JavaScript, and Firebase. I want to go deeper into data engineering and AI to build knowledge-driven, data-intensive systems that solve real-world problems.</p>
     <div class="stats">
       <div><b>3.66 / 4.00</b>CGPA, B.E. Computer Engineering</div>
-      <div><b>0.0210</b>F1@10 of my hybrid recommender vs 0.0112 for the baseline</div>
+      <div><b>27,182</b>observations ingested and validated in PostgreSQL</div>
+      <div><b>0.0210</b>F1@10 of my hybrid recommender vs 0.0112 baseline</div>
       <div><b>100,836</b>ratings modelled in a Neo4j graph</div>
     </div>
   </section>
@@ -177,6 +208,18 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
+
+      <!-- NEW PROJECT: Nepal Data Pipeline -->
+      <article class="card feature">
+        <h3>Nepal Public Data Pipeline</h3>
+        <ul>
+          <li>Built a reproducible data pipeline to ingest, validate, and transform 27,182 public observations from DataNepal.</li>
+          <li>Implemented data-quality checks (schema, duplicates, dates), automated tests (27 tests), and Docker containerisation for PostgreSQL.</li>
+          <li>Added anomaly detection (Isolation Forest) as a quality signal and deployed a multi-page Streamlit dashboard.</li>
+        </ul>
+        <ul class="tags"><li>Python</li><li>PostgreSQL</li><li>Docker</li><li>Streamlit</li><li>scikit-learn</li><li>Plotly</li></ul>
+        <div class="row"><a href="https://github.com/manish11111111/nepal-data-pipeline">GitHub</a><a href="https://nepal-data-pipeline.streamlit.app">Live demo</a></div>
+      </article>
 
       <article class="card feature">
         <h3>MovieLens Knowledge Graph</h3>
@@ -214,25 +257,18 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
         <div class="row"><a href="https://github.com/manish11111111/Hotel-Management-System">GitHub</a></div>
       </article>
 
-      <article class="card">
-        <h3>School Management System</h3>
-        <p>C# desktop application for managing students, teachers and courses.</p>
-        <ul class="tags"><li>C#</li></ul>
-        <div class="row"><a href="https://github.com/manish11111111/School-Management-System">GitHub</a></div>
-      </article>
-
     </div>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills">
-      <div><h3>Programming languages</h3><p>Python, Java, Kotlin, C#, JavaScript, PHP, C++, C</p></div>
-      <div><h3>Data &amp; databases</h3><p>SQL, MySQL, Neo4j, Cypher, Firebase, Pandas, NumPy</p></div>
-      <div><h3>Machine learning</h3><p>scikit-learn, collaborative and content-based filtering, recommender evaluation (Precision@K, Recall@K, F1@K)</p></div>
-      <div><h3>Development</h3><p>Android development, web development, REST APIs, Retrofit, Streamlit</p></div>
-      <div><h3>Programming concepts</h3><p>Object-oriented programming, data structures and algorithms</p></div>
-      <div><h3>Tools</h3><p>Android Studio, Git, GitHub, XAMPP</p></div>
+      <div><h3>Programming Languages</h3><p>Python, Java, Kotlin, C#, JavaScript, PHP, C++, C</p></div>
+      <div><h3>Data &amp; Databases</h3><p>SQL, MySQL, PostgreSQL, Neo4j, Cypher, Firebase, Pandas, NumPy</p></div>
+      <div><h3>Machine Learning</h3><p>scikit-learn, Isolation Forest, Collaborative &amp; Content-Based Filtering, Recommender Evaluation (Precision@K, Recall@K, F1@K)</p></div>
+      <div><h3>Development</h3><p>Android Development, Web Development, REST APIs, Retrofit, Streamlit, Plotly</p></div>
+      <div><h3>Programming Concepts</h3><p>Object-Oriented Programming, Data Structures &amp; Algorithms</p></div>
+      <div><h3>Tools</h3><p>Android Studio, Git, GitHub, XAMPP, Docker, Docker Compose</p></div>
     </div>
   </section>
 
@@ -244,10 +280,10 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
         <h3>B.E. in Computer Engineering</h3>
         <p>Nepal Engineering College, Changunarayan, Bhaktapur</p>
         <ul>
-          <li>CGPA: 3.66 / 4.00</li>
-          <li>Academic Excellence Award, 4.00 SGPA in 6th semester (2024)</li>
-          <li>Topper Merit Scholarship (2024)</li>
-          <li>Grade A in Database Management Systems and Artificial Intelligence</li>
+          <li>CGPA: 3.66 / 4.00 (Distinction)</li>
+          <li>Academic Excellence Award, 4.00 SGPA in 6th semester</li>
+          <li>Topper Merit Scholarship (7th and 8th Semester)</li>
+          <li>Grade A in Database Management Systems, Artificial Intelligence, and Natural Language Processing</li>
         </ul>
       </div>
     </div>
@@ -284,17 +320,17 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
     <h2>Contact</h2>
     <p>I’m open to graduate study and entry-level data and AI roles. The quickest way to reach me is email.</p>
     <ul>
-      <li>Email: <a href="mailto:manishchapagain1111@gmail.com">manishchapagain1111@gmail.com</a></li>
-      <li>Phone: <a href="tel:+9779763617636">+977 9763617636</a></li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/manish-chapagain-467451284">linkedin.com/in/manish-chapagain-467451284</a></li>
-      <li>GitHub: <a href="https://github.com/manish11111111">github.com/manish11111111</a></li>
-      <li>Location: Kathmandu, Nepal</li>
+      <li><strong>Email:</strong> <a href="mailto:manishchapagain1111@gmail.com">manishchapagain1111@gmail.com</a></li>
+      <li><strong>Phone:</strong> <a href="tel:+9779763617636">+977 9763617636</a></li>
+      <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/manish-chapagain-467451284">linkedin.com/in/manish-chapagain-467451284</a></li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/manish11111111">github.com/manish11111111</a></li>
+      <li><strong>Location:</strong> Kathmandu, Nepal</li>
     </ul>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">© <span id="yr">2026</span> Manish Chapagain</div>
+  <div class="wrap">© <span id="yr">2026</span> Manish Chapagain. Built with code, not templates.</div>
 </footer>
 
 <script>
