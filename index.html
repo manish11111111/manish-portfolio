@@ -140,24 +140,21 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-s
     <div>
       <h1>Manish Chapagain</h1>
       <p class="role">Computer Engineer · Data &amp; AI</p>
-      <p class="lead">I build reliable data pipelines, knowledge graphs, and recommender systems. I’m seeking advanced study in Data Engineering and AI to build systems that turn scattered public data into structured, intelligent applications.</p>
+      <p class="lead">I build reliable data pipelines, knowledge graphs, and graph-based recommender systems. I’m seeking advanced study in Data Engineering and AI to build systems that turn scattered public data into structured, intelligent applications.</p>
       <div class="btns">
         <a class="btn primary" href="#projects">View Projects</a>
         <a class="btn ghost" href="mailto:manishchapagain1111@gmail.com">Email Me</a>
       </div>
     </div>
 
-    <!-- Updated SVG Graph: Now includes Data Pipeline -->
     <svg class="graph" viewBox="0 0 360 300" role="img" aria-label="A knowledge graph showing Manish, a Data Pipeline, Recommender, and Knowledge Graph, using Python, PostgreSQL, Neo4j, and scikit-learn.">
-      <!-- Lines -->
-      <line x1="180" y1="150" x2="80" y2="70"/>   <!-- Manish to Pipeline -->
-      <line x1="180" y1="150" x2="285" y2="70"/>  <!-- Manish to Recommender -->
-      <line x1="180" y1="150" x2="150" y2="245"/> <!-- Manish to KG -->
-      <line x1="80" y1="70" x2="60" y2="180"/>    <!-- Pipeline to PostgreSQL -->
-      <line x1="285" y1="70" x2="300" y2="190"/>  <!-- Recommender to sklearn -->
-      <line x1="150" y1="245" x2="60" y2="180"/>  <!-- KG to Neo4j -->
-      
-      <!-- Relationship Text -->
+      <line x1="180" y1="150" x2="80" y2="70"/>
+      <line x1="180" y1="150" x2="285" y2="70"/>
+      <line x1="180" y1="150" x2="150" y2="245"/>
+      <line x1="80" y1="70" x2="60" y2="180"/>
+      <line x1="285" y1="70" x2="300" y2="190"/>
+      <line x1="150" y1="245" x2="60" y2="180"/>
+
       <text class="rel" x="105" y="100">builds</text>
       <text class="rel" x="240" y="100">builds</text>
       <text class="rel" x="165" y="210">builds</text>
@@ -165,11 +162,9 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-s
       <text class="rel" x="296" y="135">uses</text>
       <text class="rel" x="90" y="220">uses</text>
 
-      <!-- Core Node (Manish) -->
       <circle class="core" cx="180" cy="150" r="36"/>
       <text class="core-t" x="180" y="154" text-anchor="middle">Manish</text>
-      
-      <!-- Project Nodes -->
+
       <circle class="hot" cx="80" cy="70" r="34"/>
       <text x="80" y="66" text-anchor="middle" font-weight="600">Data</text>
       <text x="80" y="80" text-anchor="middle" font-weight="600">Pipeline</text>
@@ -177,12 +172,11 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-s
       <circle class="hot" cx="285" cy="70" r="34"/>
       <text x="285" y="66" text-anchor="middle" font-weight="600">Hybrid</text>
       <text x="285" y="80" text-anchor="middle" font-weight="600">Recommender</text>
-      
+
       <circle class="hot" cx="150" cy="245" r="30"/>
       <text x="150" y="241" text-anchor="middle" font-weight="600">Knowledge</text>
       <text x="150" y="255" text-anchor="middle" font-weight="600">Graph</text>
 
-      <!-- Tech Nodes -->
       <circle cx="60" cy="180" r="24"/>
       <text x="60" y="184" text-anchor="middle">PostgreSQL</text>
 
@@ -196,11 +190,11 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-s
 
   <section id="about">
     <h2>About</h2>
-    <p style="max-width:68ch;color:var(--muted);margin:0;font-size:1.05rem">I’m a Computer Engineering graduate with a solid foundation in software development, database management, and data engineering. I’ve worked with Python, SQL, PostgreSQL, Neo4j/Cypher, Docker, scikit-learn, Kotlin, Java, PHP, JavaScript, and Firebase. I want to go deeper into data engineering and AI to build knowledge-driven, data-intensive systems that solve real-world problems.</p>
+    <p style="max-width:68ch;color:var(--muted);margin:0;font-size:1.05rem">I’m a Computer Engineering graduate with a solid foundation in software development, database management, and data engineering. I’ve worked with Python, SQL, PostgreSQL, Neo4j/Cypher, Docker, PyTorch, scikit-learn, Kotlin, Java, PHP, JavaScript, and Firebase. I want to go deeper into data engineering and AI to build knowledge-driven, data-intensive systems that solve real-world problems.</p>
     <div class="stats">
       <div><b>3.66 / 4.00</b>CGPA, B.E. Computer Engineering</div>
       <div><b>27,182</b>observations ingested and validated in PostgreSQL</div>
-      <div><b>0.0210</b>F1@10 of my hybrid recommender vs 0.0112 baseline</div>
+      <div><b>+6.6%</b>NDCG@20 of LightGCN over a BPR-MF baseline (MovieLens-small, 3 splits)</div>
       <div><b>100,836</b>ratings modelled in a Neo4j graph</div>
     </div>
   </section>
@@ -209,7 +203,17 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-s
     <h2>Projects</h2>
     <div class="projects">
 
-      <!-- NEW PROJECT: Nepal Data Pipeline -->
+      <article class="card feature">
+        <h3>LightGCN Reproduction on MovieLens</h3>
+        <ul>
+          <li>Reproduced LightGCN (He et al., SIGIR 2020) against a BPR-MF baseline on MovieLens-small, with leakage-free graph construction and identical loss and embedding size.</li>
+          <li>After tuning on a validation split, LightGCN-1L improved NDCG@20 by 6.6% over BPR-MF in all 3 train/test splits and converged much faster (Recall@20 0.196 vs 0.064 at epoch 5).</li>
+          <li>The paper’s “more layers help” trend did not reproduce (1 layer &gt; 2 &gt; 3), and my early +21% result mostly reflected convergence speed.</li>
+        </ul>
+        <ul class="tags"><li>Python</li><li>PyTorch</li><li>Pandas</li><li>NumPy</li><li>scikit-learn</li><li>Matplotlib</li></ul>
+        <div class="row"><a href="https://tinyurl.com/lightcgnrepro">GitHub</a><a href="https://tinyurl.com/repro-doc">Write-up</a></div>
+      </article>
+
       <article class="card feature">
         <h3>Nepal Public Data Pipeline</h3>
         <ul>
@@ -236,7 +240,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-s
         <h3>MovieLens Hybrid Recommender</h3>
         <ul>
           <li>Combined collaborative and content-based filtering, and tuned the weighting on a validation set (70/10/20 split).</li>
-          <li>Test F1@10 of 0.0210 vs 0.0112 for the collaborative baseline, about 87.5% relative improvement.</li>
+          <li>Test F1@10 of 0.0210 vs 0.0112 for the collaborative baseline, about 87.5% relative improvement, though low in absolute terms, as expected for sparse top-10 ranking.</li>
           <li>Deployed as an interactive Streamlit app.</li>
         </ul>
         <ul class="tags"><li>Python</li><li>Pandas</li><li>scikit-learn</li><li>Streamlit</li></ul>
@@ -245,8 +249,8 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-s
 
       <article class="card">
         <h3>MovieFlix</h3>
-        <p>Android movie streaming app. I led a team of three as main developer, and built Firebase authentication, profiles, subscriptions and storage, plus TMDB API integration through Retrofit.</p>
-        <ul class="tags"><li>Kotlin</li><li>Firebase</li><li>Retrofit</li><li>TMDB API</li></ul>
+        <p>Android movie streaming app, built in a team of three and supervised by Asst. Prof. Susant Bhujel. As the backend developer, I designed the Firebase backend (users, subscription plans, active subscriptions) and integrated the TMDB API and eSewa payments with automatic subscription activation. All 11 functional test cases passed. Final assessment: A-.</p>
+        <ul class="tags"><li>Kotlin</li><li>Firebase</li><li>Retrofit</li><li>TMDB API</li><li>eSewa</li></ul>
         <div class="row"><a href="https://github.com/manish11111111/MovieFlix">GitHub</a></div>
       </article>
 
@@ -265,7 +269,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-s
     <div class="skills">
       <div><h3>Programming Languages</h3><p>Python, Java, Kotlin, C#, JavaScript, PHP, C++, C</p></div>
       <div><h3>Data &amp; Databases</h3><p>SQL, MySQL, PostgreSQL, Neo4j, Cypher, Firebase, Pandas, NumPy</p></div>
-      <div><h3>Machine Learning</h3><p>scikit-learn, Isolation Forest, Collaborative &amp; Content-Based Filtering, Recommender Evaluation (Precision@K, Recall@K, F1@K)</p></div>
+      <div><h3>Machine Learning</h3><p>PyTorch, scikit-learn, Graph Neural Networks (LightGCN), Isolation Forest, Collaborative &amp; Content-Based Filtering, Recommender Evaluation (Precision@K, Recall@K, NDCG@K, F1@K)</p></div>
       <div><h3>Development</h3><p>Android Development, Web Development, REST APIs, Retrofit, Streamlit, Plotly</p></div>
       <div><h3>Programming Concepts</h3><p>Object-Oriented Programming, Data Structures &amp; Algorithms</p></div>
       <div><h3>Tools</h3><p>Android Studio, Git, GitHub, XAMPP, Docker, Docker Compose</p></div>
@@ -282,7 +286,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-s
         <ul>
           <li>CGPA: 3.66 / 4.00 (Distinction)</li>
           <li>Academic Excellence Award, 4.00 SGPA in 6th semester</li>
-          <li>Topper Merit Scholarship (7th and 8th Semester)</li>
+          <li>Topper Merit Scholarship (6th and 7th semester)</li>
           <li>Grade A in Database Management Systems, Artificial Intelligence, and Natural Language Processing</li>
         </ul>
       </div>
@@ -313,6 +317,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-s
       <li><b>SQL</b>, Kaggle</li>
       <li><b>Intro to Machine Learning</b>, Kaggle</li>
       <li><b>Intermediate Machine Learning</b>, Kaggle</li>
+      <li><b>Data Structures and Algorithms</b>, Science of Apps (Distinction)</li>
     </ul>
   </section>
 
